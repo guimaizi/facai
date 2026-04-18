@@ -1,0 +1,369 @@
+/* 端口扫描工具样式 */
+.port-scan-container {
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.port-scan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.port-scan-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.scan-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 扫描表单 */
+.scan-form {
+    margin-bottom: 24px;
+}
+
+.scan-form .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.scan-form .form-row:last-child {
+    margin-bottom: 0;
+}
+
+.scan-form .form-group {
+    flex: 1;
+}
+
+.scan-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.scan-form .form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: #ffffff;
+    color: #2d3748;
+}
+
+.scan-form .form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.scan-form .text-muted {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #a0aec0;
+}
+
+/* 扫描结果区域 */
+.scan-result {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+/* 空状态 */
+.empty-result,
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a0aec0;
+}
+
+.empty-icon,
+.error-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-result p,
+.loading-state p,
+.error-state p {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.empty-hint {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* 加载动画 */
+.spinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 结果区块 */
+.result-section {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.result-section h4 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* 扫描信息 */
+.scan-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.scan-info h4 {
+    color: #ffffff;
+}
+
+.scan-info .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.scan-info .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scan-info .info-item label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.scan-info .info-item span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 区块头部 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-header h4 {
+    margin: 0;
+}
+
+.section-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* 徽章 */
+.badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+}
+
+/* 扫描结果列表 */
+.scan-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scan-result-item {
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s;
+}
+
+.scan-result-item:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.scan-result-item.status-open {
+    border-left: 4px solid #10b981;
+}
+
+.scan-result-item.status-closed {
+    border-left: 4px solid #ef4444;
+    opacity: 0.7;
+}
+
+.result-main {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.port-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3748;
+    min-width: 60px;
+}
+
+.port-status {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-open {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+}
+
+.status-closed {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+}
+
+.port-service {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.result-detail {
+    margin-top: 8px;
+    padding-left: 76px;
+    font-size: 12px;
+    color: #718096;
+}
+
+/* 代码块 */
+.code-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Toast提示 */
+.scan-toast {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+}
+
+.scan-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .port-scan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .scan-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .scan-form .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .result-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .port-number {
+        min-width: auto;
+    }
+
+    .result-detail {
+        padding-left: 0;
+    }
+
+    .section-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

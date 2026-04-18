@@ -1,0 +1,79 @@
+/* ===== 表格样式 ===== */
+
+/* 统一表格样式 */
+.scaner-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.scaner-table thead {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+.scaner-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.scaner-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.scaner-table tbody tr:hover {
+    background: #f7fafc;
+}
+
+/* Bootstrap 风格表格 */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* 表格链接样式 */
+.table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+/* 表格空状态 */
+.text-muted.py-4 {
+    font-style: italic;
+}
+
+/* 表格操作按钮 */
+.vuln-detail-btn {
+    padding: 2px 8px;
+    font-size: 12px;
+}

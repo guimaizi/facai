@@ -1,0 +1,89 @@
+/* ===== 基础样式 ===== */
+
+/* 通用容器样式 */
+.scaner-container,
+.scaner-overview-container,
+.scaner-auto-container,
+.scaner-results-container,
+.manual-scan-container {
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 页面标题 */
+.scaner-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.scaner-page-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 卡片样式 */
+.scaner-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.scaner-card-header {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    padding: 12px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+    font-size: 15px;
+    color: #2d3748;
+}
+
+.scaner-card-body {
+    padding: 20px;
+}
+
+/* 工具类 */
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.ml-3 {
+    margin-left: 1rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}

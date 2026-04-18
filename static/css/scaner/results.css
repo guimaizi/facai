@@ -1,0 +1,549 @@
+/* 扫描结果模块样式 */
+
+.results-container {
+    padding: 20px;
+}
+
+/* 工具栏 */
+.results-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box {
+    display: flex;
+    gap: 8px;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* 筛选区 */
+.results-filters {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #666;
+    min-width: 80px;
+    margin: 0;
+}
+
+/* 等级筛选徽章 */
+.filter-badges {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    transition: all 0.2s;
+}
+
+.filter-badge:hover {
+    background: #e9ecef;
+}
+
+.filter-badge.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.filter-badge.badge-danger {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+.filter-badge.badge-warning {
+    background: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+
+.filter-badge.badge-info {
+    background: #17a2b8;
+    color: #fff;
+    border-color: #17a2b8;
+}
+
+/* 类型筛选标签 */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    transition: all 0.2s;
+}
+
+.filter-tab:hover {
+    background: #e9ecef;
+}
+
+.filter-tab.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* 统计信息 */
+.results-stats {
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+
+.stat-item {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.stat-item strong {
+    font-size: 16px;
+}
+
+.stat-divider {
+    color: #ddd;
+    margin: 0 10px;
+}
+
+/* 表格容器 */
+.results-table-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.results-table-container table {
+    margin-bottom: 0;
+}
+
+.results-table-container thead {
+    background: #f8f9fa;
+}
+
+.results-table-container th {
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 600;
+    color: #495057;
+    padding: 12px 15px;
+}
+
+.results-table-container td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+/* 排序表头 */
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 30px !important;
+    transition: background 0.2s;
+}
+
+.sortable:hover {
+    background: #e2e8f0;
+}
+
+.sort-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    opacity: 0.3;
+}
+
+.sortable.active .sort-icon {
+    opacity: 1;
+}
+
+.sortable.active.desc .sort-icon::before {
+    content: '↓';
+}
+
+.sortable.active.asc .sort-icon::before {
+    content: '↑';
+}
+
+/* 空状态 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.empty-state .loading {
+    font-size: 16px;
+}
+
+.empty-state.text-danger {
+    color: #dc3545;
+}
+
+/* 分页 */
+.results-pagination {
+    padding: 15px;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.page-btn:hover {
+    background: #e9ecef;
+}
+
+.page-btn.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.page-ellipsis {
+    display: inline-block;
+    padding: 6px 8px;
+    color: #6c757d;
+}
+
+/* 详情弹窗 */
+.vuln-detail {
+    font-size: 14px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.detail-row label {
+    width: 100px;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.detail-row code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.detail-row .break-all {
+    word-break: break-all;
+}
+
+.detail-section {
+    margin-top: 15px;
+}
+
+.detail-section h6 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.code-block {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .results-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .toolbar-left,
+    .toolbar-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .search-box input {
+        flex: 1;
+        width: auto;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-group label {
+        margin-bottom: 5px;
+    }
+    
+    .filter-badges,
+    .filter-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .results-stats {
+        text-align: center;
+    }
+    
+    .stat-item {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .stat-divider {
+        display: none;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-row label {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+}
+
+/* ==================== 详情弹窗样式（限定作用域，避免全局冲突） ==================== */
+
+.vuln-detail-modal .modal-dialog {
+    max-width: 800px;
+}
+
+.vuln-detail-modal .modal-content {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.vuln-detail-modal .modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 15px 20px;
+    border: none;
+}
+
+.vuln-detail-modal .modal-header h5 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.vuln-detail-modal .modal-header .close {
+    color: #fff;
+    opacity: 0.9;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.vuln-detail-modal .modal-header .close:hover {
+    opacity: 1;
+}
+
+.vuln-detail-modal .modal-body {
+    padding: 0;
+}
+
+/* Tab切换 */
+.vuln-detail-modal .detail-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    padding: 0;
+}
+
+.vuln-detail-modal .detail-tab {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.vuln-detail-modal .detail-tab:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.vuln-detail-modal .detail-tab.active {
+    color: #667eea;
+    background: #fff;
+    border-bottom-color: #667eea;
+}
+
+/* Tab内容 */
+.vuln-detail-modal .detail-content {
+    display: none;
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.vuln-detail-modal .detail-content.active {
+    display: block;
+}
+
+/* 漏洞信息表格 */
+.vuln-detail-modal .vuln-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vuln-detail-modal .vuln-info-table tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.vuln-detail-modal .vuln-info-table tr:last-child {
+    border-bottom: none;
+}
+
+.vuln-detail-modal .vuln-info-table td {
+    padding: 12px 0;
+    vertical-align: top;
+}
+
+.vuln-detail-modal .vuln-info-table td:first-child {
+    width: 120px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.vuln-detail-modal .vuln-info-table td:last-child {
+    color: #2d3748;
+}
+
+/* 漏洞徽章 */
+.vuln-detail-modal .vuln-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.vuln-detail-modal .vuln-badge-danger {
+    background: #fee;
+    color: #c00;
+}
+
+.vuln-detail-modal .vuln-badge-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.vuln-detail-modal .vuln-badge-info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* 代码块 */
+.vuln-detail-modal pre {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+}
+
+.vuln-detail-modal code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #d63384;
+}

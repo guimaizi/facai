@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facai - 网络安全资产管理系统</title>
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/projects/projects.css">
+    <link rel="stylesheet" href="css/services/services.css">
+    <link rel="stylesheet" href="css/spider/spider.css">
+    <link rel="stylesheet" href="css/ai-agent/ai-agent.css">
+    <link rel="stylesheet" href="css/scaner/scaner.css">
+    <link rel="stylesheet" href="css/scaner/scaner_config.css">
+    <link rel="stylesheet" href="css/traffic/traffic.css">
+    <link rel="stylesheet" href="css/assets/assets.css">
+    <link rel="stylesheet" href="css/assets/overview.css">
+    <link rel="stylesheet" href="css/assets/websites.css">
+    <link rel="stylesheet" href="css/assets/html.css">
+    <link rel="stylesheet" href="css/assets/http.css">
+    <link rel="stylesheet" href="css/assets/highlights.css">
+    <link rel="stylesheet" href="css/tools/tools.css">
+    <link rel="stylesheet" href="css/tools/encode-decode.css">
+    <link rel="stylesheet" href="css/tools/clipboard.css">
+    <link rel="stylesheet" href="css/tools/replay.css">
+    <link rel="stylesheet" href="css/tools/port-scan.css">
+    <link rel="stylesheet" href="css/system/system.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Facai</h2>
+                <p>网络安全资产管理系统</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#projects" data-module="projects">项目管理</a></li>
+                    <li><a href="#services" data-module="services">服务管理</a></li>
+                    <li><a href="#traffic" data-module="traffic">HTTP流量</a></li>
+                    <li>
+                        <a href="#assets" data-module="assets">资产管理</a>
+                        <ul class="submenu">
+                            <li><a href="#assets/overview" data-module="assets/overview">资产总览</a></li>
+                            <li><a href="#assets/config" data-module="assets/config">资产管理配置</a></li>
+                            <li><a href="#assets/subdomains" data-module="assets/subdomains">子域名管理</a></li>
+                            <li><a href="#assets/websites" data-module="assets/websites">网站管理</a></li>
+                            <li><a href="#assets/http" data-module="assets/http">HTTP请求响应管理</a></li>
+                            <li><a href="#assets/html" data-module="assets/html">HTML大文件管理</a></li>
+                            <li><a href="#assets/ip-cidr" data-module="assets/ip-cidr">IP C段资产</a></li>
+                            <li><a href="#assets/ip" data-module="assets/ip">IP资产</a></li>
+                            <li><a href="#assets/highlights" data-module="assets/highlights">重点资产管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tools" data-module="tools">工具与插件</a>
+                        <ul class="submenu">
+                            <li><a href="#tools/replay" data-module="tools/replay">HTTP请求重放</a></li>
+                            <li><a href="#tools/encode-decode" data-module="tools/encode-decode">编码解码</a></li>
+                            <li><a href="#tools/port-scan" data-module="tools/port-scan">端口扫描</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#spider" data-module="spider">爬虫管理</a></li>
+                    <li><a href="#ai-agent" data-module="ai-agent">AI Agent</a></li>
+                    <li>
+                        <a href="#scaner" data-module="scaner">漏洞扫描管理</a>
+                        <ul class="submenu">
+                            <li><a href="#scaner/overview" data-module="scaner/overview">扫描概览</a></li>
+                            <li><a href="#scaner/config" data-module="scaner/config">漏洞扫描设置</a></li>
+                            <li><a href="#scaner/manual" data-module="scaner/manual">手动模式</a></li>
+                            <li><a href="#scaner/results" data-module="scaner/results">扫描结果</a></li>
+                            <li><a href="#scaner/logs" data-module="scaner/logs">盲打日志</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#system" data-module="system">系统配置</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="breadcrumb"></div>
+                <div class="project-status-display" id="projectStatusDisplay">
+                    <div class="status-indicator">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span class="status-text" id="statusText">加载中...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="tab-list"></div>
+                <div class="tab-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/pageup.js"></script>
+    <script src="js/api/projects-api.js"></script>
+    <script src="js/api/services-api.js"></script>
+    <script src="js/api/traffic-api.js"></script>
+    <script src="js/api/assets-api.js"></script>
+    <script src="js/api/assets-config-api.js"></script>
+    <script src="js/api/tools-api.js"></script>
+    <script src="js/api/system-api.js"></script>
+    <script src="js/assets/config.js"></script>
+    <script src="js/assets/overview/overview.js"></script>
+    <script src="js/projects/projects.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/spider/spider.js"></script>
+    <script src="js/ai-agent/ai-agent.js"></script>
+    <!-- 漏洞扫描器模块（按顺序加载） -->
+    <script src="js/scaner/scaner.js"></script>
+    <script src="js/scaner/overview.js"></script>
+    <script src="js/scaner/scaner_config.js"></script>
+    <script src="js/scaner/manual_mode.js"></script>
+    <script src="js/scaner/results.js"></script>
+    <script src="js/scaner/logs.js"></script>
+    <script src="js/traffic/traffic.js"></script>
+    <script src="js/assets/subdomains/subdomains.js"></script>
+    <script src="js/assets/websites/websites.js"></script>
+    <script src="js/assets/html/html.js"></script>
+    <script src="js/assets/http/http.js"></script>
+    <script src="js/assets/highlights/highlights.js"></script>
+    <script src="js/assets/assets.js"></script>
+    <script src="js/tools/encode-decode/encode-decode.js"></script>
+    <script src="js/tools/clipboard/clipboard.js"></script>
+    <script src="js/tools/replay/replay.js"></script>
+    <script src="js/tools/port-scan/port-scan.js"></script>
+    <script src="js/tools/tools.js"></script>
+    <script src="js/system/system.js"></script>
+    <script src="js/hash.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/core.js"></script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+.projects-container {
+    padding: 20px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+    transform: translateY(-4px);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.project-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.project-info {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-status.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.project-status.inactive {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(113, 128, 150, 0.3);
+}
+
+/* Card Component */
+.card {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/* Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+/* Table Component */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+/* Table container with horizontal scroll */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    position: relative;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.table-responsive .table {
+    min-width: 800px;
+}
+
+/* Sticky header */
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f8f9fa;
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.table thead th::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f8f9fa;
+    z-index: -1;
+}
+
+.table tbody td {
+    padding: 12px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.table tbody td.url-cell {
+    max-width: 400px;
+}
+
+.table tbody td.website-cell {
+    max-width: 250px;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.02);
+}
+
+/* Form Layout */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2d3748;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    display: block;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Utility Classes */
+.p-3 {
+    padding: 1rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-success {
+    color: #28a745;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.mr-3 {
+    margin-right: 15px;
+}
+
+/* Card header row alignment */
+.card-header .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.card-header .row .col-md-6 {
+    padding: 0;
+}
+
+.card-header .row .col-md-6:first-child {
+    flex: 1;
+}
+
+.card-header .row .col-md-6:last-child {
+    flex: 0 0 auto;
+}
+
+/* Button spacing */
+.card-header .btn {
+    margin-left: 8px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+/* Modal Dialog */
+.modal-dialog {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.modal-dialog.modal-lg {
+    max-width: 900px;
+    width: 90%;
+}
+
+/* Modal Content - Override head.css styles */
+.modal-dialog .modal-content {
+    display: flex !important;
+    flex-direction: column;
+    height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 0 !important;
+    max-width: none !important;
+    animation: none !important;
+    border-radius: 0 !important;
+}
+
+/* Modal Header - Override head.css styles */
+.modal-dialog .modal-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.modal-header .modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.modal-header .close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #000;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header .close:hover {
+    color: #666;
+}
+
+/* Modal Body - Override head.css styles */
+.modal-dialog .modal-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+/* Modal Footer - Override head.css styles */
+.modal-dialog .modal-footer {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px;
+    padding: 20px 24px;
+    border-top: 1px solid #e2e8f0;
+    background: #f8f9fa;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    align-items: center;
+}
+
+/* Ensure modal footer buttons have consistent size */
+.modal-dialog .modal-footer .btn {
+    min-width: 80px;
+    height: 38px;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Modal Form Elements */
+.modal-body .form-group {
+    margin-bottom: 18px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-body .form-control {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2d3748;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    display: block;
+}
+
+.modal-body .form-control:focus {
+    border-color: #667eea;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.modal-body textarea.form-control {
+    resize: vertical;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    min-height: 80px;
+    line-height: 1.6;
+}
+
+.modal-body input[type="number"],
+.modal-body input[type="text"] {
+    height: 42px;
+}
+
+.modal-body select.form-control {
+    height: 42px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+.modal-body input,
+.modal-body textarea,
+.modal-body select {
+    display: block;
+    width: 100%;
+}
+
+/* Modal specific utility classes */
+.modal-body #formMode,
+.modal-body #jsonMode {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.input-group .form-control {
+    flex: 1;
+    min-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.input-group-append {
+    display: flex;
+}
+
+.input-group-append .btn {
+    margin-left: -1px;
+    border-radius: 0 6px 6px 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+}
+
+.input-group .form-control:focus,
+.input-group-append .btn:focus {
+    z-index: 3;
+}
+
+.input-group .form-control:focus + .input-group-append .btn,
+.input-group-append .btn:focus {
+    z-index: 4;
+}
+
+.input-group .form-control:focus {
+    position: relative;
+}
+
+/* Modal utility classes */
+.mb-2 {
+    margin-bottom: 10px;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
+
+.modal-body .btn {
+    margin-top: 8px;
+}
+
+#addDnsServer {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a4191 100%);
+}
+
+.btn-secondary {
+    color: #fff;
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #3d4452 100%);
+}
+
+.btn-success {
+    color: #fff;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-color: transparent;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #0d9668 0%, #047857 100%);
+}
+
+.btn-warning {
+    color: #212529;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-color: transparent;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.btn-danger {
+    color: #fff;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border-color: transparent;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+}

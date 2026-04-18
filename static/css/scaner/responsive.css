@@ -1,0 +1,41 @@
+/* ===== 响应式样式 ===== */
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .manual-scan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .manual-scan-actions {
+        width: 100%;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
+    }
+
+    .detection-types,
+    .test-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .http-editor {
+        font-size: 12px;
+    }
+    
+    #scanModeTabs .nav-link {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

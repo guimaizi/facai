@@ -1,0 +1,620 @@
+/* 重点资产管理样式 */
+
+/* 卡片样式 */
+#highlightsList {
+    background: #ffffff;
+}
+
+/* 表格样式 */
+#highlightsList tr {
+    background: #ffffff;
+    transition: background 0.2s;
+}
+
+#highlightsList tr:hover {
+    background-color: #f7fafc !important;
+}
+
+#highlightsList td {
+    vertical-align: middle;
+    padding: 12px 8px;
+    color: #2d3748 !important;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#highlightsList th {
+    background: #f7fafc;
+    color: #4a5568 !important;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+#highlightsList a {
+    color: #667eea !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#highlightsList a:hover {
+    color: #764ba2 !important;
+    text-decoration: underline;
+}
+
+/* 类型徽章颜色 */
+#highlightsList .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#highlightsList .badge-primary {
+    background: #3b82f6 !important;
+}
+
+#highlightsList .badge-success {
+    background: #10b981 !important;
+}
+
+#highlightsList .badge-warning {
+    background: #f59e0b !important;
+}
+
+#highlightsList .badge-danger {
+    background: #ef4444 !important;
+}
+
+#highlightsList .badge-info {
+    background: #06b6d4 !important;
+}
+
+#highlightsList .badge-secondary {
+    background: #6b7280 !important;
+}
+
+/* 标签样式 */
+.highlight-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff !important;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 搜索栏样式 */
+#searchType {
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #e2e8f0;
+    border-right: none;
+    background: #ffffff;
+    color: #2d3748;
+}
+
+#searchType:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#searchHighlight {
+    border-radius: 0;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #2d3748;
+}
+
+#searchHighlight:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#searchHighlight::placeholder {
+    color: #a0aec0;
+}
+
+/* 操作按钮样式 */
+#highlightsList .btn-sm {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-right: 4px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#highlightsList .btn-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#highlightsList .btn-info:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-1px);
+}
+
+#highlightsList .btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+#highlightsList .btn-warning:hover {
+    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+    transform: translateY(-1px);
+}
+
+#highlightsList .btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+#highlightsList .btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    transform: translateY(-1px);
+}
+
+/* 头部按钮样式 */
+.card-header .btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.card-header .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.card-header .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.card-header .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.card-header .btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.card-header .btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+/* 搜索按钮样式 */
+#searchBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#searchBtn:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+#clearSearchBtn {
+    background: #e2e8f0;
+    color: #4a5568 !important;
+    border: 1px solid #cbd5e0;
+    padding: 10px 20px;
+    border-radius: 0 8px 8px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-text-fill-color: #4a5568 !important;
+}
+
+#clearSearchBtn:hover {
+    background: #cbd5e0;
+}
+
+/* 排序表头样式 */
+.table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.table th.sortable:hover {
+    background: #edf2f7;
+    color: #667eea !important;
+}
+
+.table th.sortable .sort-icon {
+    margin-left: 6px;
+    font-size: 10px;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.table th.sortable:hover .sort-icon {
+    opacity: 0.7;
+}
+
+.table th.sortable.sort-asc,
+.table th.sortable.sort-desc {
+    color: #667eea !important;
+    background: #edf2f7;
+}
+
+.table th.sortable.sort-asc .sort-icon,
+.table th.sortable.sort-desc .sort-icon {
+    opacity: 1;
+    color: #667eea;
+}
+
+/* 模态框样式 - 使用特殊标识符提高优先级 */
+#highlightModal .modal-content,
+.highlight-detail-modal {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    border: none !important;
+}
+
+#highlightModal .modal-header,
+.highlight-detail-modal .modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #ffffff !important;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 16px 24px !important;
+    border-bottom: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+#highlightModal .modal-title,
+.highlight-detail-modal .modal-title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    margin: 0 !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#highlightModal .modal-close,
+.highlight-detail-modal .modal-close {
+    color: #ffffff !important;
+    font-size: 28px !important;
+    cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+}
+
+#highlightModal .modal-close:hover,
+.highlight-detail-modal .modal-close:hover {
+    opacity: 0.8 !important;
+    transform: none !important;
+}
+
+#highlightModal .modal-body,
+.highlight-detail-modal .modal-body {
+    padding: 24px !important;
+    background: #ffffff !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+}
+
+#highlightModal .modal-footer,
+.highlight-detail-modal .modal-footer {
+    padding: 16px 24px !important;
+    background: #ffffff !important;
+    border-radius: 0 0 16px 16px !important;
+    border-top: 2px solid #e2e8f0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Tab样式 - 使用特殊标识符提高优先级 */
+.highlight-detail-modal ul.nav-tabs {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 20px 0 !important;
+    display: flex !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    background: transparent !important;
+}
+
+.highlight-detail-modal ul.nav-tabs::before,
+.highlight-detail-modal ul.nav-tabs::after {
+    display: none !important;
+}
+
+.highlight-detail-modal ul.nav-tabs li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.highlight-detail-modal ul.nav-tabs li::before {
+    display: none !important;
+}
+
+.highlight-detail-modal .nav-link {
+    display: inline-block !important;
+    color: #4a5568 !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 8px 8px 0 0 !important;
+    margin-right: 4px !important;
+    transition: all 0.3s !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    -webkit-text-fill-color: #4a5568 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+.highlight-detail-modal .nav-link:hover {
+    background: #f7fafc !important;
+    color: #667eea !important;
+    -webkit-text-fill-color: #667eea !important;
+    text-decoration: none !important;
+}
+
+.highlight-detail-modal .nav-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.highlight-detail-modal .tab-content {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.highlight-detail-modal .tab-pane {
+    padding: 0 !important;
+}
+
+.highlight-detail-modal .fade {
+    opacity: 1 !important;
+}
+
+.highlight-detail-modal .show {
+    display: block !important;
+}
+
+.highlight-detail-modal .mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* 网格系统样式 */
+#highlightModal .row,
+.highlight-detail-modal .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -8px !important;
+    margin-left: -8px !important;
+}
+
+#highlightModal .col-md-3,
+#highlightModal .col-md-4,
+#highlightModal .col-md-6,
+#highlightModal .col-md-8,
+#highlightModal .col-md-9,
+.highlight-detail-modal .col-md-3,
+.highlight-detail-modal .col-md-4,
+.highlight-detail-modal .col-md-6,
+.highlight-detail-modal .col-md-8,
+.highlight-detail-modal .col-md-9 {
+    position: relative !important;
+    width: 100% !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+}
+
+#highlightModal .col-md-3,
+.highlight-detail-modal .col-md-3 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+}
+
+#highlightModal .col-md-4,
+.highlight-detail-modal .col-md-4 {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+}
+
+#highlightModal .col-md-6,
+.highlight-detail-modal .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+#highlightModal .col-md-8,
+.highlight-detail-modal .col-md-8 {
+    flex: 0 0 66.666667% !important;
+    max-width: 66.666667% !important;
+}
+
+#highlightModal .col-md-9,
+.highlight-detail-modal .col-md-9 {
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+}
+
+/* 表单组样式 - 使用特殊标识符提高优先级 */
+#highlightModal .form-group,
+.highlight-detail-modal .form-group {
+    margin-bottom: 16px !important;
+}
+
+#highlightModal .form-group label,
+.highlight-detail-modal .form-group label {
+    font-weight: 600 !important;
+    color: #4a5568 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+    font-size: 13px !important;
+    -webkit-text-fill-color: #4a5568 !important;
+}
+
+#highlightModal .form-control,
+.highlight-detail-modal .form-control {
+    display: block !important;
+    width: 100% !important;
+    height: 38px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #2d3748 !important;
+    background-color: #f7fafc !important;
+    background-clip: padding-box !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s !important;
+    -webkit-text-fill-color: #2d3748 !important;
+    font-family: inherit !important;
+    background-image: none !important;
+}
+
+#highlightModal .form-control:focus,
+.highlight-detail-modal .form-control:focus {
+    border-color: #667eea !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* 下拉框特殊样式 */
+#highlightModal select.form-control,
+.highlight-detail-modal select.form-control {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    cursor: pointer !important;
+    padding-right: 36px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 12px 12px !important;
+    white-space: nowrap !important;
+}
+
+#highlightModal select.form-control option,
+.highlight-detail-modal select.form-control option {
+    font-size: 14px !important;
+    padding: 8px !important;
+    color: #2d3748 !important;
+    background-color: #fff !important;
+    white-space: normal !important;
+    min-height: 30px !important;
+}
+
+#highlightModal textarea.form-control,
+.highlight-detail-modal textarea.form-control {
+    height: auto !important;
+    resize: vertical !important;
+    min-height: 80px !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* 空数据提示 */
+#highlightsList .text-muted {
+    color: #a0aec0 !important;
+}
+
+#highlightsList .text-danger {
+    color: #e53e3e !important;
+}
+
+/* 分页样式 */
+#pagination {
+    margin-top: 20px;
+}
+
+/* 卡片样式 */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 16px 16px 0 0;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-header .col-md-6 {
+    color: #2d3748 !important;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* 表格响应式 */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    background: #ffffff;
+}
+
+.table th {
+    background: #f7fafc;
+    color: #4a5568 !important;
+    font-weight: 600;
+    padding: 12px 8px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.table td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    border-top: 1px solid #e2e8f0;
+    color: #2d3748 !important;
+}
+
+.table tbody tr:hover {
+    background-color: #f7fafc;
+}

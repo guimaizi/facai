@@ -1,0 +1,272 @@
+/**
+ * 漏洞扫描设置样式
+ * DNSLog 设置 + 常用剪贴板
+ */
+
+/* 容器 */
+.scaner-config-container {
+    padding: 20px;
+}
+
+/* 标题 */
+.scaner-config-page-header {
+    margin-bottom: 20px;
+}
+
+.scaner-config-page-header h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 网格布局 */
+.scaner-config-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 区块 */
+.scaner-config-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 卡片 */
+.scaner-config-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.scaner-config-card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scaner-config-card-body {
+    padding: 20px;
+}
+
+/* 表单 */
+.scaner-config-form-group {
+    margin-bottom: 15px;
+}
+
+.scaner-config-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.scaner-config-form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.scaner-config-form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.scaner-config-form-text {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.scaner-config-form-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 按钮 */
+.scaner-config-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+
+.scaner-config-btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.scaner-config-btn-primary:hover {
+    background: #5568d3;
+}
+
+.scaner-config-btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.scaner-config-btn-success:hover {
+    background: #218838;
+}
+
+.scaner-config-btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.scaner-config-btn-secondary:hover {
+    background: #5a6268;
+}
+
+.scaner-config-btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.scaner-config-btn-danger:hover {
+    background: #c82333;
+}
+
+.scaner-config-btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.scaner-config-btn-icon {
+    font-size: 16px;
+}
+
+/* 剪贴板操作 */
+.scaner-config-clipboard-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 统计卡片 */
+.scaner-config-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.scaner-config-stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    color: white;
+}
+
+.scaner-config-stat-label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.scaner-config-stat-value {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* 剪贴板表单 */
+.scaner-config-clipboard-form {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 剪贴板列表 */
+.scaner-config-clipboard-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* 剪贴板项 */
+.scaner-config-clipboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.scaner-config-clipboard-item:hover {
+    background: #e9ecef;
+}
+
+.scaner-config-item-content {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.scaner-config-item-text {
+    word-break: break-all;
+    font-size: 13px;
+    color: #333;
+}
+
+.scaner-config-item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* 空状态 */
+.scaner-config-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.scaner-config-empty-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.scaner-config-empty-hint {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Toast 提示 */
+.scaner-config-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 9999;
+}
+
+.scaner-config-toast.show {
+    opacity: 1;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .scaner-config-grid {
+        grid-template-columns: 1fr;
+    }
+}

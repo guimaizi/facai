@@ -1,0 +1,436 @@
+/* 手动模式样式 - 现代化平铺布局（限定作用域） */
+
+/* 所有样式限定在 .manual-page 范围内，避免影响全局 */
+.manual-page {
+    min-height: calc(100vh - 60px);
+    background: #f5f7fa;
+    padding: 0;
+}
+
+/* 页面头部 */
+.manual-page .page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.manual-page .header-content {
+    flex: 1;
+}
+
+.manual-page .page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.manual-page .page-desc {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.manual-page .header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.manual-page .header-actions .btn {
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.manual-page .header-actions .btn-light {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.manual-page .header-actions .btn-light:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.manual-page .header-actions .btn-primary {
+    background: #fff;
+    color: #667eea;
+    border: none;
+}
+
+.manual-page .header-actions .btn-primary:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 主要内容区 */
+.manual-page .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: calc(100vh - 150px);
+}
+
+/* 面板通用样式 */
+.manual-page .input-panel,
+.manual-page .result-panel {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e9ecef;
+}
+
+.manual-page .result-panel {
+    border-right: none;
+    border-left: 1px solid #e9ecef;
+}
+
+.manual-page .panel-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #e9ecef;
+    background: #fafbfc;
+}
+
+.manual-page .panel-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.manual-page .panel-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #667eea;
+}
+
+.manual-page .status-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e9ecef;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: manualSpin 0.8s linear infinite;
+}
+
+@keyframes manualSpin {
+    to { transform: rotate(360deg); }
+}
+
+.manual-page .panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px;
+}
+
+/* Tab 切换 - 重命名为 panel-tabs 避免冲突 */
+.manual-page .panel-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+/* 重命名为 mode-tab 避免与全局 tab-item 冲突 */
+.manual-page .mode-tab {
+    flex: 1;
+    padding: 10px 20px;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.manual-page .mode-tab:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.manual-page .mode-tab.active {
+    background: #667eea;
+    border-color: #667eea;
+    color: #fff;
+}
+
+.manual-page .mode-icon {
+    font-size: 16px;
+}
+
+/* 输入区域 */
+.manual-page .input-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.manual-page .input-wrapper textarea {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    resize: none;
+    transition: border-color 0.2s;
+}
+
+.manual-page .input-wrapper textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.manual-page .input-hint {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.manual-page .hint-icon {
+    font-size: 16px;
+}
+
+/* 空状态 */
+.manual-page .empty-state,
+.manual-page .error-state,
+.manual-page .success-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.manual-page .empty-icon,
+.manual-page .error-icon,
+.manual-page .success-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.manual-page .empty-state h4,
+.manual-page .error-state h4,
+.manual-page .success-state h4 {
+    font-size: 20px;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+}
+
+.manual-page .empty-state p,
+.manual-page .error-state p,
+.manual-page .success-state p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.manual-page .success-state {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-radius: 8px;
+}
+
+.manual-page .error-state {
+    background: #fff5f5;
+    border-radius: 8px;
+}
+
+.manual-page .result-meta {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+/* 结果摘要 */
+.manual-page .result-summary {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.manual-page .summary-item {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+}
+
+.manual-page .summary-item.danger {
+    border-color: #f5c6cb;
+    background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+}
+
+.manual-page .summary-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #dc3545;
+    margin-bottom: 5px;
+}
+
+.manual-page .summary-label {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* 漏洞卡片 */
+.manual-page .vuln-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.manual-page .vuln-card {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.manual-page .vuln-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.manual-page .vuln-card.high {
+    border-left: 4px solid #dc3545;
+}
+
+.manual-page .vuln-card.medium {
+    border-left: 4px solid #ffc107;
+}
+
+.manual-page .vuln-card.low {
+    border-left: 4px solid #17a2b8;
+}
+
+.manual-page .vuln-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.manual-page .vuln-level {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* 重命名为 vuln-badge-* 避免冲突 */
+.manual-page .vuln-badge-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.manual-page .vuln-badge-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+.manual-page .vuln-badge-info {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.manual-page .vuln-type {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.manual-page .vuln-info {
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.manual-page .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.manual-page .info-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.manual-page .info-label {
+    font-size: 12px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.manual-page .info-value {
+    font-size: 13px;
+    color: #2d3748;
+}
+
+.manual-page .info-value.url {
+    word-break: break-all;
+}
+
+.manual-page .vuln-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .manual-page .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .manual-page .result-panel {
+        border-left: none;
+        border-top: 1px solid #e9ecef;
+    }
+}
+
+@media (max-width: 768px) {
+    .manual-page .page-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .manual-page .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .manual-page .panel-header {
+        padding: 15px;
+    }
+    
+    .manual-page .panel-body {
+        padding: 15px;
+    }
+    
+    .manual-page .vuln-info {
+        grid-template-columns: 1fr;
+    }
+}

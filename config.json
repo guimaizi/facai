@@ -1,0 +1,21 @@
+{
+    "flask_port":5001,
+    "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "burp_path": "D:\\hack_tools\\burp\\",
+    "chrome_cdp_port": 19227,
+    "chrome_spider_cdp_port": 19228,
+    "mitmproxy_port": 18081,
+    "burp_port":8080,
+    "mongodb": {
+        "ip": "127.0.0.1",
+        "port": 27017,
+        "dbname": "facai",
+        "username": "",
+        "password": ""
+    },
+    "AI_model":{
+        "model_name":"",
+        "API":"",
+        "API_KEY": ""
+    }
+}

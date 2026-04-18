@@ -1,0 +1,614 @@
+/* 爬虫管理样式 - 强制覆盖全局样式 */
+
+/* 重置 spider-container 内的所有元素，避免全局样式干扰 */
+.spider-container {
+    padding: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 确保 row 对齐 */
+.spider-container .row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+.spider-status-section,
+.spider-controls,
+.spider-config,
+.spider-log {
+    margin-bottom: 20px;
+}
+
+.spider-status-section h4,
+.spider-controls h4,
+.spider-config h4,
+.spider-log h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 状态网格 */
+.spider-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.spider-status-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spider-status-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.spider-status-value {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 控制按钮 */
+.spider-control-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 配置项 */
+.spider-config-item {
+    margin-bottom: 15px;
+}
+
+.spider-config-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.spider-config-item input,
+.spider-config-item select {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 日志容器 */
+.spider-log-container {
+    max-height: 400px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.spider-log-container pre {
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* 域名标签 */
+.spider-domain-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.spider-domain-tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.spider-domain-tag:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* 服务状态徽章 - 限定在 spider 容器内 */
+.spider-container #chromeStatus,
+.spider-container #mitmproxyStatus,
+.spider-container #spiderStatus {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+/* 重置 card 样式 - 恢复 Bootstrap 默认 */
+.spider-container .card {
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    border: 1px solid rgba(0,0,0,.125) !important;
+    border-radius: .25rem !important;
+    background: #fff !important;
+}
+
+.spider-container .card:hover {
+    transform: none !important;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    border-color: rgba(0,0,0,.125) !important;
+}
+
+.spider-container .card.bg-info,
+.spider-container .card.bg-success,
+.spider-container .card.bg-warning,
+.spider-container .card.bg-secondary {
+    /* 保持背景色 */
+}
+
+.spider-container .card.bg-info h4,
+.spider-container .card.bg-success h4,
+.spider-container .card.bg-warning h4,
+.spider-container .card.bg-secondary h4 {
+    margin: 0 !important;
+    font-weight: bold !important;
+}
+
+/* 统计卡片容器 - 确保居中 */
+.spider-container .row.mb-3 > [class*="col-"] {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.spider-container .row.mb-3 > [class*="col-"] .card {
+    width: 100%;
+}
+
+/* 确保 row 的 mb-3 生效 */
+.spider-container .row.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* card-header 样式优化 - 恢复 Bootstrap 默认 */
+.spider-container .card-header {
+    background-color: rgba(0,0,0,.03) !important;
+    border-bottom: 1px solid rgba(0,0,0,.125) !important;
+    padding: .75rem 1.25rem !important;
+    margin-bottom: 0 !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+}
+
+.spider-container .card-header::before {
+    display: none !important;
+}
+
+/* Tab 样式 - 确保 nav-item 横向排列 */
+.spider-container #spiderTabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-left: 0;  /* 移除左侧内边距 */
+    list-style: none; /* 移除列表圆点 */
+}
+
+.spider-container #spiderTabs .nav-item {
+    margin-bottom: 0;
+    list-style: none; /* 移除列表圆点 */
+}
+
+.spider-container #spiderTabs .nav-link {
+    color: #495057;
+    border: 1px solid transparent;
+    border-bottom: none;
+    padding: 8px 15px;
+    margin-right: 5px;
+    margin-bottom: -1px;
+    border-radius: 4px 4px 0 0;
+    background: #e9ecef;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.spider-container #spiderTabs .nav-link:hover {
+    background: #dee2e6;
+}
+
+.spider-container #spiderTabs .nav-link.active {
+    background: #fff;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.spider-container #spiderTabs .nav-link i {
+    margin-right: 5px;
+    font-style: normal;
+}
+
+/* 表格样式 - 恢复 Bootstrap 默认 */
+.spider-container .table {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    background-color: transparent !important;
+    border-collapse: collapse !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+.spider-container .table thead {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+.spider-container .table th {
+    font-weight: 600 !important;
+    background: transparent !important;
+    border-bottom: 2px solid #dee2e6 !important;
+    padding: .75rem !important;
+    vertical-align: bottom !important;
+    border-top: 0 !important;
+    text-transform: none !important;
+    font-size: inherit !important;
+    letter-spacing: normal !important;
+    color: #495057 !important;
+}
+
+.spider-container .table td {
+    vertical-align: middle !important;
+    font-size: 13px !important;
+    padding: .75rem !important;
+    border-top: 1px solid #dee2e6 !important;
+}
+
+.spider-container .table tbody tr {
+    transition: none !important;
+}
+
+.spider-container .table tbody tr:hover {
+    background-color: rgba(0,0,0,.075) !important;
+    transform: none !important;
+}
+
+.spider-container .table a {
+    color: #007bff !important;
+    text-decoration: none !important;
+}
+
+.spider-container .table a:hover {
+    text-decoration: underline !important;
+}
+
+/* 按钮样式优化 - 恢复 Bootstrap 默认 */
+.spider-container .btn {
+    display: inline-block !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    border: 1px solid transparent !important;
+    padding: .375rem .75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    border-radius: .25rem !important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    box-shadow: none !important;
+    position: static !important;
+    overflow: visible !important;
+}
+
+.spider-container .btn::before {
+    display: none !important;
+}
+
+.spider-container .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.spider-container .btn-primary {
+    color: #fff !important;
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+.spider-container .btn-primary:hover {
+    background-color: #0069d9 !important;
+    border-color: #0062cc !important;
+}
+
+.spider-container .btn-success {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.spider-container .btn-success:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+.spider-container .btn-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.spider-container .btn-danger:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+.spider-container .btn-info {
+    color: #fff !important;
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
+
+.spider-container .btn-info:hover {
+    background-color: #138496 !important;
+    border-color: #117a8b !important;
+}
+
+.spider-container .btn-sm {
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    border-radius: .2rem !important;
+}
+
+.spider-container #startPenetration,
+.spider-container #stopPenetration,
+.spider-container #refreshStatus {
+    min-width: 100px;
+}
+
+/* 分页样式 - 使用 PageUp 组件的样式，这里只添加额外的间距 */
+.spider-container .pagination {
+    margin: 15px 0;
+}
+
+/* 模态框样式 - 恢复 Bootstrap 默认 */
+.spider-container .modal {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1050 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    outline: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+.spider-container .modal.fade .modal-dialog {
+    transition: transform .3s ease-out !important;
+    transform: translate(0,-50px) !important;
+}
+
+.spider-container .modal.show .modal-dialog {
+    transform: none !important;
+}
+
+.spider-container .modal-dialog {
+    position: relative !important;
+    width: auto !important;
+    margin: .5rem !important;
+    pointer-events: none !important;
+}
+
+.spider-container .modal-content {
+    position: relative !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    pointer-events: auto !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid rgba(0,0,0,.2) !important;
+    border-radius: .3rem !important;
+    outline: 0 !important;
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.5) !important;
+    padding: 0 !important;
+    max-height: none !important;
+}
+
+.spider-container .modal-header {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    border-top-left-radius: calc(.3rem - 1px) !important;
+    border-top-right-radius: calc(.3rem - 1px) !important;
+    margin-bottom: 0 !important;
+}
+
+.spider-container .modal-title {
+    margin-bottom: 0 !important;
+    line-height: 1.5 !important;
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+}
+
+.spider-container .modal-body {
+    position: relative !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    padding: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+.spider-container .modal-footer {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+    padding: .75rem !important;
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom-right-radius: calc(.3rem - 1px) !important;
+    border-bottom-left-radius: calc(.3rem - 1px) !important;
+    gap: 0 !important;
+}
+
+.spider-container .modal-footer > :not(:last-child) {
+    margin-right: .25rem !important;
+}
+
+.spider-container #detailModalBody table {
+    margin-bottom: 0 !important;
+}
+
+.spider-container #detailModalBody pre {
+    font-size: 12px !important;
+    border-radius: 4px !important;
+}
+
+.spider-container #detailModalBody img {
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* 表单样式 - 恢复 Bootstrap 默认 */
+.spider-container .form-group {
+    margin-bottom: 1rem !important;
+}
+
+.spider-container .form-group label {
+    display: inline-block !important;
+    margin-bottom: .5rem !important;
+    font-weight: 400 !important;
+    color: inherit !important;
+    font-size: inherit !important;
+}
+
+.spider-container .form-control {
+    display: block !important;
+    width: 100% !important;
+    padding: .375rem .75rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    font-family: inherit !important;
+}
+
+.spider-container .form-control:focus {
+    color: #495057 !important;
+    background-color: #fff !important;
+    border-color: #80bdff !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25) !important;
+}
+
+.spider-container .form-control::placeholder {
+    color: #6c757d !important;
+    opacity: 1 !important;
+}
+
+.spider-container .form-control-sm {
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    line-height: 1.5 !important;
+    border-radius: .2rem !important;
+}
+
+.spider-container #httpSearchKeyword {
+    font-size: 13px !important;
+}
+
+.spider-container #httpSearchType {
+    font-size: 13px !important;
+}
+
+/* 加载动画 */
+.spider-loading-spinner {
+    display: inline-block;
+    font-size: 2em;
+    animation: spider-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spider-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+}
+
+/* 空数据提示 - 限定在 spider 容器内 */
+.spider-container .text-muted.py-4 {
+    font-style: italic;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .spider-domain-tags {
+        display: block;
+    }
+    
+    .spider-domain-tag {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    .spider-container #chromeStatus,
+    .spider-container #mitmproxyStatus,
+    .spider-container #spiderStatus {
+        display: block;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    /* 移动端 Tab 样式 */
+    .spider-container #spiderTabs {
+        flex-direction: column;
+    }
+    
+    .spider-container #spiderTabs .nav-link {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+    }
+    
+    /* 移动端分页样式调整 */
+    .spider-container .pagination {
+        gap: 4px;
+    }
+    
+    .spider-container .pagination-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    /* 移动端统计卡片 */
+    .spider-container .row.mb-3 > [class*="col-"] {
+        margin-bottom: 10px;
+    }
+}

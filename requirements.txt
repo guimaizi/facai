@@ -1,0 +1,11 @@
+Flask
+pymongo
+requests
+python-nmap
+psutil
+mitmproxy
+beautifulsoup4
+playwright
+urlextract
+openai
+sklearn

@@ -1,0 +1,399 @@
+/* 编码解码工具样式 */
+
+.encode-header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.encode-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.encode-desc {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.encode-container {
+    padding: 20px;
+}
+
+/* 编码类型选择器 */
+.encode-type-selector {
+    margin-bottom: 30px;
+}
+
+.encode-type-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.encode-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.encode-type-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.encode-type-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.encode-type-item:hover::before {
+    left: 100%;
+}
+
+.encode-type-item:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.encode-type-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    transform: translateY(-3px);
+}
+
+.encode-type-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.encode-type-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+    transition: color 0.3s;
+}
+
+.encode-type-item.active .encode-type-name {
+    color: #ffffff;
+}
+
+/* 编码工作区 */
+.encode-workspace {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* 输入输出区域 */
+.encode-input-section,
+.encode-output-section {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.encode-input-section:hover,
+.encode-output-section:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.encode-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+.encode-section-icon {
+    font-size: 18px;
+}
+
+.encode-section-title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d3748;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.encode-clear-btn,
+.encode-copy-btn {
+    padding: 6px 12px;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #718096;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.encode-clear-btn:hover,
+.encode-copy-btn:hover {
+    background: #edf2f7;
+    color: #4a5568;
+    border-color: #cbd5e0;
+}
+
+.encode-copy-btn.success {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* 文本区域 */
+.encode-textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+    color: #2d3748;
+}
+
+.encode-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.encode-textarea.error {
+    border-color: #fc8181;
+    background: #fff5f5;
+    color: #c53030;
+}
+
+.encode-textarea::placeholder {
+    color: #a0aec0;
+}
+
+/* 统计信息 */
+.encode-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #f7fafc;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #718096;
+    font-weight: 500;
+}
+
+/* 操作按钮区域 */
+.encode-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 30px;
+}
+
+.encode-action-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.encode-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.encode-action-btn:hover::before {
+    left: 100%;
+}
+
+.encode-action-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.encode-action-btn:active {
+    transform: scale(0.95);
+}
+
+.encode-action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.encode-action-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.encode-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.encode-btn:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.decode-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.decode-btn:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
+}
+
+.decode-btn.disabled {
+    background: #cbd5e0;
+    box-shadow: none;
+}
+
+.encode-action-icon {
+    font-size: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.encode-action-btn span:last-child {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .encode-workspace {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .encode-actions {
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+
+    .encode-action-btn {
+        width: 120px;
+        height: 50px;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .encode-textarea {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .encode-type-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .encode-type-name {
+        font-size: 11px;
+    }
+
+    .encode-textarea {
+        min-height: 150px;
+        font-size: 12px;
+    }
+
+    .encode-actions {
+        flex-direction: column;
+    }
+
+    .encode-action-btn {
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+/* 滚动条样式 */
+.encode-textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.encode-textarea::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 4px;
+}
+
+.encode-textarea::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+}
+
+.encode-textarea::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+}
+
+/* 加载动画 */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.encode-action-btn.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
