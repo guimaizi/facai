@@ -34,6 +34,7 @@ from urllib.parse import urlparse, parse_qs
 from service.Class_Core_Function import Class_Core_Function
 from service.scaner.vuln_core import VulnerabilityScanner
 from service.spider.asset_monitor import AssetMonitor
+from service.spider.core import SpiderCore
 
 
 class ServiceManager:
@@ -51,6 +52,8 @@ class ServiceManager:
         self.asset_monitor = None
         self.asset_monitor_thread = None
         self.asset_monitor_running = False
+        self.spider_core = None
+        self.spider_thread = None
         
         # 服务状态
         self.services_status = {
@@ -59,7 +62,8 @@ class ServiceManager:
             'chrome_normal': {'running': False, 'port': None},
             'burp': {'running': False},
             'auto_scan': {'running': False},
-            'asset_monitor': {'running': False}
+            'asset_monitor': {'running': False},
+            'spider': {'running': False}
         }
         
         # 配置
@@ -372,6 +376,41 @@ class ServiceManager:
         self.services_status['asset_monitor']['running'] = False
         print("[AssetMonitor] 资产监控服务已停止")
     
+    def start_spider(self):
+        """启动爬虫服务（通过数据库 service_lock 控制实际运行）"""
+        try:
+            print("[Spider] 初始化爬虫服务...")
+            
+            # 获取项目配置
+            project_config = self.Core_Function.callback_project_config()
+            if not project_config:
+                print("[Spider] 无法获取项目配置，跳过爬虫启动")
+                return False
+            
+            project_name = project_config.get('Project', '')
+            if not project_name:
+                print("[Spider] 项目名称为空，跳过爬虫启动")
+                return False
+            
+            # 创建爬虫实例，在后台线程启动 run() 循环
+            # run() 内部通过数据库 spider_service 控制是否执行（1=执行，0=休眠）
+            self.spider_core = SpiderCore(project_name)
+            self.spider_thread = threading.Thread(
+                target=self.spider_core.run,
+                daemon=True
+            )
+            self.spider_thread.start()
+            
+            print(f"[Spider] 爬虫服务已启动 (项目: {project_name}，通过数据库 spider_service 控制运行)")
+            self.services_status['spider']['running'] = True
+            return True
+            
+        except Exception as e:
+            print(f"[Spider] 启动失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+    
     def start_all(self):
         """启动所有服务"""
         print("\n" + "=" * 60)
@@ -404,14 +443,19 @@ class ServiceManager:
                 print("Burp Suite 启动失败")
         
         # 5. 启动自动扫描服务
-        print("\n[4/4] 启动自动扫描服务...")
+        print("\n[4/6] 启动自动扫描服务...")
         if not self.start_auto_scan(batch_size=10):
             print("自动扫描服务启动失败（不影响其他服务）")
         
         # 6. 启动资产监控服务
-        print("\n[5/5] 启动资产监控服务...")
+        print("\n[5/6] 启动资产监控服务...")
         if not self.start_asset_monitor():
             print("资产监控服务启动失败（不影响其他服务）")
+        
+        # 7. 启动爬虫服务
+        print("\n[6/6] 启动爬虫服务...")
+        if not self.start_spider():
+            print("爬虫服务启动失败（不影响其他服务）")
         
         print("\n" + "=" * 60)
         print("服务启动完成！")
@@ -424,11 +468,8 @@ class ServiceManager:
         """停止所有服务"""
         print("\n停止所有服务...")
         
-        # 停止资产监控
-        self.stop_asset_monitor()
-        
-        # 停止自动扫描
-        self.stop_auto_scan()
+        # 爬虫、资产监控、自动扫描 由数据库 service_lock 控制启停，无需手动停止
+        # 进程退出时 daemon 线程自动结束
         
         # 停止 Burp
         if self.burp_process:
@@ -487,6 +528,10 @@ class ServiceManager:
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 continue
         self.services_status['burp']['running'] = burp_running
+        
+        # 检查爬虫状态（线程是否存活）
+        spider_active = self.spider_thread and self.spider_thread.is_alive()
+        self.services_status['spider']['running'] = spider_active
         
         return self.services_status
     
